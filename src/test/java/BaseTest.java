@@ -39,7 +39,7 @@ public class BaseTest {
     //    @BeforeMethod
     @BeforeMethod
     @Parameters({"BaseUrl"})
-    public void launchBrowser(String BaseURL) throws MalformedURLException {
+    public void launchBrowser(String BaseUrl) throws MalformedURLException {
         url = BaseURL;
         threadLocal = new ThreadLocal<>();
         driver = pickBrowser(System.getProperty("browser"));
