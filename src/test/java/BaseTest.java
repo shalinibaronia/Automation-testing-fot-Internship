@@ -174,7 +174,7 @@ public class BaseTest {
 
         return new Object[][]{
                 {"invalid@email.com", "invalidPass"},
-                {"demo@mail.com", "invalid"},
+                {"shalinibaronia@gmail.com", "invalid"},
                 {"", ""}
         };
     }
