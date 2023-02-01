@@ -69,7 +69,7 @@ public class BaseTest {
     }
 
     public WebDriver pickBrowser(String browser) throws MalformedURLException {
-        DesiredCapabilities dCap = new DesiredCapabilities();
+        DesiredCapabilities caps = new DesiredCapabilities();
         String gridURI = "http://192.168.86.32:4444";
         switch (browser) {
             case "firefox":
@@ -100,14 +100,14 @@ public class BaseTest {
         String hubURL = "https://hub.lambdatest.com/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "Firefox");
-        capabilities.setCapability("browserVersion", "107.0");
+        capabilities.setCapability("browserName", "Chrome");
+        capabilities.setCapability("browserVersion", "108.0");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put("user", "khaledoni01");
+        ltOptions.put("user", "shalinibaronia");
         ltOptions.put("accessKey", "Zx0HIXlEJ9ERHjcH9UDCvNXRoiSm2si9VM3L6Dii3SX6W1GPF4");
         ltOptions.put("build", "Selenium 4");
         ltOptions.put("name", this.getClass().getName());
-        ltOptions.put("platformName", "Windows 10");
+        ltOptions.put("platformName", "Windows 11");
         ltOptions.put("seCdp", true);
         ltOptions.put("selenium_version", "4.0.0");
         capabilities.setCapability("LT:Options", ltOptions);
