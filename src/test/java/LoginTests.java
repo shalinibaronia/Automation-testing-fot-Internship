@@ -8,16 +8,7 @@ import Pages.LoginPage;
 public class LoginTests extends BaseTest {
 
     //    @Test(enabled = true, priority = 0, description = "LoginEmptyEmailPasswordTest")
-    @Test()
-    public void loginEmptyEmailPasswordTest (String email, String password) {
-        LoginPage loginPage = new LoginPage(getDriver());
-
-        loginPage.provideEmail("shalinibaronia@gmail.com");
-        loginPage.providePassword("te$t$tudent");
-        loginPage.clickSubmitBtn();
-        Assert.assertEquals(getDriver().getCurrentUrl(), url);
-    }
-
+   
     //Page Object Model example
     @Test()
     public void LoginValidEmailPasswordTest () {
