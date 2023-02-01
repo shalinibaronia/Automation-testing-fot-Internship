@@ -69,9 +69,8 @@ public class BaseTest {
     }
 
     public WebDriver pickBrowser(String browser) throws MalformedURLException {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        String gridURL = "http://192.168.1.160:4444";
-
+        DesiredCapabilities dCap = new DesiredCapabilities();
+        String gridURI = "http://192.168.86.32:4444";
         switch (browser) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
@@ -81,13 +80,13 @@ public class BaseTest {
                 return driver = new EdgeDriver();
             case "grid-edge":
                 caps.setCapability("browserName", "MicrosoftEdge");
-                return driver = new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
+                return driver = new RemoteWebDriver(URI.create(gridURI).toURL(), caps);
             case "grid-firefox":
                 caps.setCapability("browserName", "firefox");
-                return driver = new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
+                return driver = new RemoteWebDriver(URI.create(gridURI).toURL(), caps);
             case "grid-chrome":
                 caps.setCapability("browserName", "chrome");
-                return driver = new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
+                return driver = new RemoteWebDriver(URI.create(gridURI).toURL(), caps);
             case "cloud":
                 return lambdaTest();
             default:
