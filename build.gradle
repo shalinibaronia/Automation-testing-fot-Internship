@@ -38,4 +38,4 @@ task testRegression(type: Test) {
         suites "src/test/resources/Regression.xml"
         systemProperty "browser", System.getProperty("browser")
     }
-}}
+}
