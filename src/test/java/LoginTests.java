@@ -8,7 +8,7 @@ import Pages.LoginPage;
 public class LoginTests extends BaseTest {
 
     //    @Test(enabled = true, priority = 0, description = "LoginEmptyEmailPasswordTest")
-   
+
     //Page Object Model example
     @Test()
     public void LoginValidEmailPasswordTest () {
