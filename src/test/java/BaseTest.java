@@ -38,7 +38,7 @@ public class BaseTest {
 
     //    @BeforeMethod
     @BeforeMethod
-    @Parameters({"BaseURL"})
+    @Parameters({"BaseUrl"})
     public void launchBrowser(String BaseURL) throws MalformedURLException {
         url = BaseURL;
         threadLocal = new ThreadLocal<>();
