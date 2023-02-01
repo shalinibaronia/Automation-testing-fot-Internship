@@ -1,6 +1,6 @@
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,8 +29,6 @@ public class BaseTest {
     public WebDriver driver = null;
     public String url = null;
     public WebDriverWait wait = null;
-
-    public FluentWait fluentWait = null;
     public Actions actions = null;
     public ThreadLocal<WebDriver> threadLocal = null;
 
@@ -41,7 +39,7 @@ public class BaseTest {
 //    }
 
     //    @BeforeMethod
-    @Before
+    @BeforeMethod
     @Parameters({"BaseURL"})
     public void launchBrowser(String BaseURL) throws MalformedURLException {
         url = BaseURL;
@@ -62,7 +60,7 @@ public class BaseTest {
     }
 
     //    @AfterMethod
-    @After
+    @AfterMethod
     public void closeBrowser() {
         getDriver().quit();
         threadLocal.remove();
@@ -121,7 +119,7 @@ public class BaseTest {
 //        driver.get(url);
 //    }
 
-    public void login(String email, String password) {
+    public void logIn(String email, String password) {
         provideEmail(email);
         providePassword(password);
         clickSubmit();
