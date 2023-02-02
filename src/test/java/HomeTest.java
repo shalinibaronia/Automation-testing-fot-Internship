@@ -5,28 +5,29 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class HomeTest extends BaseTest {
 
     @Test
-    public void addSongToPlaylist() throws InterruptedException {
+    public void addSongToPlaylist(){
         LoginPage loginPage = new LoginPage(getDriver());
-        logIn("shalinibaronia@gmail.com", "te$t$tudent");
-        Thread.sleep(2000);
+        loginPage.logIn();
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
         grabASong();
 
     }
 
     public void grabASong(){
-        LoginPage loginPage = new LoginPage(getDriver());
         WebElement song = driver.findElement(By.xpath("//article[@data-test='song-card']"));
         WebElement playlist = driver.findElement(By.xpath("//section[@id='playlists']//li[5]"));
 
-        Actions acts = new Actions(driver);
+        Actions acts = new Actions(getDriver());
         acts.clickAndHold(song)
                 .release(playlist)
                 .build()
