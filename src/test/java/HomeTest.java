@@ -27,7 +27,7 @@ public class HomeTest extends BaseTest {
         WebElement song = driver.findElement(By.xpath("//article[@data-test='song-card']"));
         WebElement playlist = driver.findElement(By.xpath("//section[@id='playlists']//li[5]"));
 
-        Actions acts = new Actions(getDriver());
+        Actions acts = new Actions(driver);
         acts.clickAndHold(song)
                 .release(playlist)
                 .build()
