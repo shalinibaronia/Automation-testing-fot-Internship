@@ -27,10 +27,10 @@ public class BaseTest {
   public Actions action = null;
   public String url = null;
 
-  @BeforeSuite
-  public static void setupClass(){
-    WebDriverManager.chromedriver().setup();
-  }
+//  @BeforeSuite
+//  public static void setupClass(){
+//    WebDriverManager.chromedriver().setup();
+//  }
 
   @BeforeMethod
   @Parameters({"BaseUrl"})
