@@ -11,7 +11,7 @@ import java.time.Duration;
 public class HomeTests extends BaseTest {
 
     @Test
-    public void loginValidEmailPassword () {
+    public void deleteSearchWithDeleteKey () {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
