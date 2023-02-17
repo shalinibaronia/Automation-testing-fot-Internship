@@ -12,10 +12,11 @@ public class HomePage extends BasePage{
 
     private By userAvatarIcon = By.cssSelector("img.avatar");
     By searchBar = By.cssSelector("input[placeholder='Press F to search']");
+    By favouriteList = By.cssSelector("a[href='#!/favorites']");
 
     public HomePage(WebDriver givenDriver){
         super(givenDriver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(50));
     }
 
     public WebElement getUserAvatar(){
@@ -25,6 +26,13 @@ public class HomePage extends BasePage{
     public WebElement getSearchBar(){
         return findElement(searchBar);
     }
+
+    public WebElement getFavoriteList(){
+        return wait.until(ExpectedConditions.elementToBeClickable(favouriteList));
+
+    }
+
+
 
 
 }

@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,32 +25,36 @@ public class ProfilePage extends BasePage {
     }
 
     public ProfilePage fillCurrentPassword(String password) {
-        wait.until(ExpectedConditions.elementToBeClickable(currentPassword));
-        driver.findElement(currentPassword).sendKeys(password);
+
+        WebElement fillCurrentPassword = driver.findElement(currentPassword);
+        wait.until(ExpectedConditions.elementToBeClickable(fillCurrentPassword)).sendKeys(password);
         return this;
     }
 
     public ProfilePage sendName() {
-        wait.until(ExpectedConditions.elementToBeClickable(name));
-        driver.findElement(name).sendKeys("shalinibaronia");
+        WebElement fillCurrentName = driver.findElement(name);
+        wait.until(ExpectedConditions.elementToBeClickable(fillCurrentName)).sendKeys("shalinibaronia");
         return this;
     }
 
     public ProfilePage sendEmailAddress(String email) {
-        wait.until(ExpectedConditions.elementToBeClickable(emailAddress));
-        driver.findElement(emailAddress).clear();
-        driver.findElement(emailAddress).sendKeys(email);
+        WebElement fillEmailAddress = driver.findElement(emailAddress);
+        fillEmailAddress.clear();
+        wait.until(ExpectedConditions.elementToBeClickable(fillEmailAddress)).sendKeys(email);
+        //driver.findElement(emailAddress).clear();
+       // driver.findElement(emailAddress).sendKeys(email);
         return this;
     }
 
     public ProfilePage sendNewPassword(String passwordnew) {
-        wait.until(ExpectedConditions.elementToBeClickable(newPassword));
-        driver.findElement(newPassword).sendKeys(passwordnew);
+        WebElement fillNewPassword = driver.findElement(newPassword);
+        wait.until(ExpectedConditions.elementToBeClickable(fillNewPassword)).sendKeys(passwordnew);
+        //driver.findElement(newPassword).sendKeys(passwordnew);
         return this;
     }
 
     public ProfilePage clickSaveButton(){
-        driver.findElement(saveButton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
         return this;
     }
 
