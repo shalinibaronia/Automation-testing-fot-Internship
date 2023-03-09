@@ -1,9 +1,7 @@
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -39,6 +37,8 @@ public class BaseTest {
     driver = pickBrowser("browser");
     wait = new WebDriverWait(driver,Duration.ofSeconds(20));
     action = new Actions(driver);
+    Dimension dimension = new Dimension(2500, 2000);
+    driver.manage().window().setSize(dimension);
     driver.manage().window().maximize();
     driver.get(url);
   }
